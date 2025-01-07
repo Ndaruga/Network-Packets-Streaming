@@ -6,6 +6,7 @@ from botocore.exceptions import NoCredentialsError, PartialCredentialsError
 # Configuration
 S3_BUCKET_NAME = 'network-packets-streaming'
 PCAP_DIRECTORY = r'Saved-packets'
+os.makedirs(PCAP_DIRECTORY, exist_ok=True)
 
 def upload_files_to_s3(directory):
     s3_client = boto3.client('s3')
